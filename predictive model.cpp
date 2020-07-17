@@ -175,6 +175,17 @@ switch(category)
 
 
 
+if(score>=3)
+{
+	cout<<"HIGH ALERT"
+}
+else
+{
+	cout<<"EVERY THING WILL BE OK";
+}
+
+
+
 
 
 return 0;
