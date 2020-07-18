@@ -26,7 +26,7 @@ int rain_count()
 int main()
 {
 string disis_name;
-cin>>diss_name;
+cin>>disis_name;
 int category;   //0,1,2,3
 cin>>category;
 int city_max;
@@ -56,9 +56,9 @@ cin>>area_id;
 
 float wind;
 cin>>wind;
-switch(category)
-{
-	case:1
+	if(category==1)
+	{
+	
 	//water borne
 	// gastroenteritis, campylobacteriosis,
 	// Escherichia coli, cholera, cryptosporiosis, hepatitis A,
@@ -123,9 +123,11 @@ switch(category)
 		score++;
 	}
 	
-	break;
+}
 	
-	case:2
+	if(category==2)
+	{
+	
 		//vector borne
 		if(temperature<=25)
 		{
@@ -138,7 +140,7 @@ switch(category)
 	  
 	  if(rainfall>60)
 	  {
-	  	score--
+	  	score--;
 	  }
 	  if(rainfall>20 && rainfall <60)
 	  {
@@ -149,9 +151,11 @@ switch(category)
 	  
 	  //if(temperature>30 && )
 	  
-	  break;
 	  
-	  case:3
+}
+	  if(category==3)
+	  {
+	  
 	  //virus borne
 	  
 	  if(temperature>30)
@@ -177,12 +181,9 @@ switch(category)
 
 if(score>=3)
 {
-	cout<<"HIGH ALERT"
+	cout<<"HIGH ALERT";
 }
-else
-{
-	cout<<"EVERY THING WILL BE OK";
-}
+
 
 
 

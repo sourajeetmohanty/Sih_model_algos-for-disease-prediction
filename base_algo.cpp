@@ -16,13 +16,13 @@ void SIR(int s,int i,int r,double morbidity)
 	r=recovered population */
 	double beta;
 	int total_population=s;
-	int total_families=25;
+	int total_families=170;
 	int intimacy_factor=4;
 	/*this intimacy factor increases in places where trading is more, because trading means more people at work, hence more spread*/
 	
 	
 	
-	beta=(double)total_population/(double)(total_families+intimacy_factor);
+	beta=(double)(total_population+(total_families+intimacy_factor))/(double)(total_families);
 	/*more value means more infectious is the disease*/
 	double gamma;
 	 gamma=(double)1/(double)morbidity;
@@ -40,7 +40,8 @@ void SIR(int s,int i,int r,double morbidity)
 	 cout<<"EPIDEMIC ALERT"<<"\n";
 	 else 
 	 cout<<"NO EPIDEMIC< RELAX"<<"\n";
-	 double max_infected=abs(i-(gamma/beta)*(1+log((gamma/beta)*s)));
+	 double max_infected=i+s-(log(s)*((double)1/(double)transmission_index));
+	 //double max_infected=abs(i-(gamma/beta)*(1+log((gamma/beta)*s)));
 	 cout<<"maximum infected population will be= "<<max_infected<<"\n";
 	 
 	 
@@ -49,7 +50,7 @@ void SIR(int s,int i,int r,double morbidity)
 }
 int main()
 {
- int s=100;
+ int s=980;
  int i=20;
  int r=0;
  double morbidity=(double)i/(double)s;
