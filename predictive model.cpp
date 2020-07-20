@@ -177,7 +177,7 @@ cin>>wind;
 		
 }
 
-
+cout<<score<<endl;
 
 if(score>=3)
 {
